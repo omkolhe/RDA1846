@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -9779,6 +9779,13 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <pinref part="JP4" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="63.5" x2="156.21" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="156.21" y1="63.5" x2="156.21" y2="64.77" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X3" gate="G1" pin="2"/>
+<wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="60.96" x2="99.06" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="GND31" gate="1" pin="GND"/>
+<wire x1="99.06" y1="66.04" x2="119.38" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
