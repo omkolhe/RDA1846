@@ -7777,6 +7777,29 @@ Source: http://www.osram.convergy.de/ ... LO_LS_LY L89K.pdf</description>
 <text x="1.73" y="-2.178" size="1.016" layer="21" font="vector">A</text>
 <text x="-2.938" y="-2.178" size="1.016" layer="21" font="vector">K</text>
 </package>
+<package name="1X01">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.9304" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+<package name="1X01-CLEANBIG">
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.778"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="1X1-BIGPOGO">
+<pad name="P$1" x="0" y="0" drill="1.4" diameter="2.54" shape="long"/>
+</package>
 </packages>
 <symbols>
 <symbol name="PINHD8">
@@ -7819,6 +7842,15 @@ Source: http://www.osram.convergy.de/ ... LO_LS_LY L89K.pdf</description>
 <vertex x="-2.921" y="-2.413"/>
 <vertex x="-2.413" y="-2.921"/>
 </polygon>
+</symbol>
+<symbol name="PINHD1">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -8229,6 +8261,40 @@ Source: http://www.osram.convergy.de/</description>
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD-1X1" prefix="JP" uservalue="yes">
+<description>&lt;b&gt;Pin header 1x1 for 0.1" spacing&lt;/b&gt;
+&lt;p&gt;
+With round pins</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="CB" package="1X01-CLEANBIG">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-BIGPOGO" package="1X1-BIGPOGO">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -9119,13 +9185,13 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="JP2" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="JP3" library="pinhead" deviceset="PINHD-1X3" device=""/>
-<part name="GND33" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="JP4" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="JP5" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="JP6" library="pinhead" deviceset="PINHD-1X1" device=""/>
+<part name="JP2" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="JP7" library="adafruit" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9198,10 +9264,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="ENABLE" gate="A" x="52.07" y="119.38" rot="R180"/>
 <instance part="GND26" gate="1" x="62.23" y="113.03"/>
 <instance part="VDD10" gate="G$1" x="62.23" y="128.27" rot="MR0"/>
-<instance part="JP2" gate="A" x="-132.08" y="76.2" rot="R180"/>
 <instance part="JP3" gate="A" x="-132.08" y="62.23" rot="R180"/>
-<instance part="GND33" gate="1" x="-138.43" y="67.31"/>
 <instance part="JP1" gate="G$1" x="68.58" y="97.79" rot="R180"/>
+<instance part="JP2" gate="G$1" x="-137.16" y="81.28" rot="R180"/>
+<instance part="JP7" gate="G$1" x="-137.16" y="73.66" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -9472,13 +9538,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <junction x="-86.36" y="109.22"/>
 <junction x="-99.06" y="101.6"/>
 </segment>
-<segment>
-<pinref part="JP2" gate="A" pin="1"/>
-<wire x1="-129.54" y1="73.66" x2="-128.27" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-128.27" y1="73.66" x2="-128.27" y2="69.85" width="0.1524" layer="91"/>
-<pinref part="GND33" gate="1" pin="GND"/>
-<wire x1="-128.27" y1="69.85" x2="-138.43" y2="69.85" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="PABIAS" class="0">
 <segment>
@@ -9599,9 +9658,11 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="-99.06" y1="74.93" x2="-99.06" y2="72.39" width="0.1524" layer="91"/>
 <junction x="-99.06" y="72.39"/>
 <wire x1="-121.92" y1="72.39" x2="-99.06" y2="72.39" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="3"/>
 <wire x1="-129.54" y1="78.74" x2="-121.92" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="-121.92" y1="78.74" x2="-121.92" y2="72.39" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="-134.62" y1="81.28" x2="-129.54" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-129.54" y1="81.28" x2="-129.54" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SDIO" class="0">
@@ -9614,9 +9675,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <pinref part="R_I2C2" gate="G$1" pin="1"/>
 <wire x1="-91.44" y1="74.93" x2="-91.44" y2="69.85" width="0.1524" layer="91"/>
 <junction x="-91.44" y="69.85"/>
-<pinref part="JP2" gate="A" pin="2"/>
-<wire x1="-129.54" y1="76.2" x2="-123.952" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-134.62" y1="76.2" x2="-123.952" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-123.952" y1="76.2" x2="-123.952" y2="69.85" width="0.1524" layer="91"/>
+<pinref part="JP7" gate="G$1" pin="1"/>
+<wire x1="-134.62" y1="76.2" x2="-134.62" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
