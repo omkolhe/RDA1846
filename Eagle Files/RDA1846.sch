@@ -9179,19 +9179,19 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="C20" library="rcl" deviceset="C-US" device="C1206"/>
 <part name="X1" library="con-coax" deviceset="SMA-" device="142-0701-871/876"/>
 <part name="X2" library="con-coax" deviceset="SMA-" device="142-0701-871/876"/>
-<part name="X3" library="con-coax" deviceset="SMA-" device="142-0701-871/876"/>
+<part name="RF_OUT" library="con-coax" deviceset="SMA-" device="142-0701-871/876"/>
 <part name="GND28" library="supply1" deviceset="GND" device=""/>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="JP3" library="pinhead" deviceset="PINHD-1X3" device=""/>
+<part name="MODE_SENB_GND" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
-<part name="JP4" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="JP5" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="JP6" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="JP2" library="adafruit" deviceset="PINHD-1X1" device=""/>
-<part name="JP7" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="GND" library="pinhead" deviceset="PINHD-1X1" device=""/>
+<part name="V1" library="pinhead" deviceset="PINHD-1X1" device=""/>
+<part name="V2" library="pinhead" deviceset="PINHD-1X1" device=""/>
+<part name="SCLK" library="adafruit" deviceset="PINHD-1X1" device=""/>
+<part name="SDIO" library="adafruit" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9264,10 +9264,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="ENABLE" gate="A" x="52.07" y="119.38" rot="R180"/>
 <instance part="GND26" gate="1" x="62.23" y="113.03"/>
 <instance part="VDD10" gate="G$1" x="62.23" y="128.27" rot="MR0"/>
-<instance part="JP3" gate="A" x="-132.08" y="62.23" rot="R180"/>
+<instance part="MODE_SENB_GND" gate="A" x="-132.08" y="62.23" rot="R180"/>
 <instance part="JP1" gate="G$1" x="68.58" y="97.79" rot="R180"/>
-<instance part="JP2" gate="G$1" x="-137.16" y="81.28" rot="R180"/>
-<instance part="JP7" gate="G$1" x="-137.16" y="73.66" rot="R180"/>
+<instance part="SCLK" gate="G$1" x="-137.16" y="81.28" rot="R180"/>
+<instance part="SDIO" gate="G$1" x="-137.16" y="73.66" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -9484,7 +9484,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <junction x="-119.38" y="55.88"/>
 <wire x1="-119.38" y1="62.23" x2="-124.46" y2="62.23" width="0.1524" layer="91"/>
 <wire x1="-124.46" y1="62.23" x2="-124.46" y2="59.69" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="A" pin="1"/>
+<pinref part="MODE_SENB_GND" gate="A" pin="1"/>
 <wire x1="-124.46" y1="59.69" x2="-129.54" y2="59.69" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -9660,7 +9660,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="-121.92" y1="72.39" x2="-99.06" y2="72.39" width="0.1524" layer="91"/>
 <wire x1="-129.54" y1="78.74" x2="-121.92" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="-121.92" y1="78.74" x2="-121.92" y2="72.39" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="G$1" pin="1"/>
+<pinref part="SCLK" gate="G$1" pin="1"/>
 <wire x1="-134.62" y1="81.28" x2="-129.54" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="-129.54" y1="81.28" x2="-129.54" y2="78.74" width="0.1524" layer="91"/>
 </segment>
@@ -9677,7 +9677,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <junction x="-91.44" y="69.85"/>
 <wire x1="-134.62" y1="76.2" x2="-123.952" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-123.952" y1="76.2" x2="-123.952" y2="69.85" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="1"/>
+<pinref part="SDIO" gate="G$1" pin="1"/>
 <wire x1="-134.62" y1="76.2" x2="-134.62" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -9709,7 +9709,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <pinref part="U$1" gate="G$1" pin="MODE"/>
 <wire x1="-34.29" y1="35.56" x2="-17.78" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-128.27" y1="67.31" x2="-128.27" y2="64.77" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="A" pin="3"/>
+<pinref part="MODE_SENB_GND" gate="A" pin="3"/>
 <wire x1="-128.27" y1="64.77" x2="-129.54" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -9722,7 +9722,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="-30.48" y1="30.48" x2="-17.78" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-116.84" y1="64.77" x2="-127" y2="64.77" width="0.1524" layer="91"/>
 <wire x1="-127" y1="64.77" x2="-127" y2="62.23" width="0.1524" layer="91"/>
-<pinref part="JP3" gate="A" pin="2"/>
+<pinref part="MODE_SENB_GND" gate="A" pin="2"/>
 <wire x1="-127" y1="62.23" x2="-129.54" y2="62.23" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -9802,15 +9802,15 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="C20" gate="G$1" x="40.64" y="53.34" rot="R270"/>
 <instance part="X1" gate="G1" x="7.62" y="73.66"/>
 <instance part="X2" gate="G1" x="7.62" y="43.18"/>
-<instance part="X3" gate="G1" x="106.68" y="58.42" rot="R180"/>
+<instance part="RF_OUT" gate="G1" x="106.68" y="58.42" rot="R180"/>
 <instance part="GND28" gate="1" x="12.7" y="63.5"/>
 <instance part="GND29" gate="1" x="12.7" y="33.02"/>
 <instance part="GND30" gate="1" x="5.08" y="58.42" rot="R270"/>
 <instance part="GND31" gate="1" x="119.38" y="63.5"/>
 <instance part="GND32" gate="1" x="88.9" y="78.74"/>
-<instance part="JP4" gate="G$1" x="158.75" y="64.77"/>
-<instance part="JP5" gate="G$1" x="158.75" y="59.69"/>
-<instance part="JP6" gate="G$1" x="158.75" y="54.61"/>
+<instance part="GND" gate="G$1" x="158.75" y="64.77"/>
+<instance part="V1" gate="G$1" x="158.75" y="59.69"/>
+<instance part="V2" gate="G$1" x="158.75" y="54.61"/>
 </instances>
 <busses>
 </busses>
@@ -9838,12 +9838,12 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="88.9" y1="81.28" x2="88.9" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="83.82" x2="139.7" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="83.82" x2="139.7" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="1"/>
+<pinref part="GND" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="63.5" x2="156.21" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="156.21" y1="63.5" x2="156.21" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="X3" gate="G1" pin="2"/>
+<pinref part="RF_OUT" gate="G1" pin="2"/>
 <wire x1="104.14" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="60.96" x2="99.06" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND31" gate="1" pin="GND"/>
@@ -9892,7 +9892,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <net name="N$25" class="0">
 <segment>
 <pinref part="C18" gate="G$1" pin="2"/>
-<pinref part="X3" gate="G1" pin="1"/>
+<pinref part="RF_OUT" gate="G1" pin="1"/>
 <wire x1="88.9" y1="58.42" x2="104.14" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -9904,7 +9904,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="81.28" y1="68.58" x2="137.16" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="68.58" x2="137.16" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="60.96" x2="156.21" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="JP5" gate="G$1" pin="1"/>
+<pinref part="V1" gate="G$1" pin="1"/>
 <wire x1="156.21" y1="60.96" x2="156.21" y2="59.69" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -9915,7 +9915,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="137.16" y1="53.34" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="58.42" x2="149.86" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="58.42" x2="149.86" y2="54.61" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="G$1" pin="1"/>
+<pinref part="V2" gate="G$1" pin="1"/>
 <wire x1="149.86" y1="54.61" x2="156.21" y2="54.61" width="0.1524" layer="91"/>
 </segment>
 </net>
